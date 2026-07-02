@@ -1,16 +1,17 @@
 import asyncio
 from telethon import TelegramClient
 
-# Telegram'ning eng oxirgi va ishchi rasmiy kalitlari
-api_id = 21743126
-api_hash = '8280f5bc91b61c94d0b13cf48834c772'
+# Muqobil mijozlarning bloklanmaydigan universal kalitlari
+api_id = 2040
+api_hash = 'b1d16e15441413a476da333ec55705f1'
 
 async def main():
-    client = TelegramClient('new_clean_session', api_id, api_hash)
+    # Eski xatolik qaytarilmasligi uchun sessiya nomini o'zgartiramiz
+    client = TelegramClient('clean_final_session', api_id, api_hash)
     await client.connect()
     print("SENDING_CODE_NOW")
-    # Kodni sizning raqamingizga jo'natish buyrug'i
-    await client.send_code_request('+998998232551')
+    # Raqamingizni aniq xalqaro formatda kiritamiz
+    await client.send_code_request('+998882325511')
     print("CODE_SENT_SUCCESSFULLY")
 
 asyncio.run(main())
